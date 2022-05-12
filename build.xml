@@ -110,7 +110,6 @@
 	    <war destfile="Bully.war" 
 	    	               webxml="WebContent/WEB-INF/web.xml">
 	    	<classes dir="${dir.workspace}/build/classes"/>
-	    	<fileset dir="${dir.workspace}/build/classes"/>
 	    	<lib dir="${lib.dir}"/>
 	      <manifest>
 		<attribute name="AntCreateWar" value="ant.Create.War" />
