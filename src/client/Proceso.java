@@ -89,7 +89,6 @@ public class Proceso extends Thread{
 	}
 	
 	public void parar() {
-		this.coordinador=-1;
 		this.estado_proceso = "parado";
 	}
 	
