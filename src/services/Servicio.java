@@ -138,7 +138,7 @@ public class Servicio {
         int response;
         
         for(Proceso proceso:mayores) {
-            if(proceso.getId() > id && proceso.getEstado_proceso().equals("arrancado")) {     
+            if(proceso.getId() > id) {     
                 // --------------------------------------------------------------------
                 try {
                 	Client client=ClientBuilder.newClient();
@@ -192,7 +192,7 @@ public class Servicio {
 	            Collection<Proceso> todos = procesos.values();
 
 	            for(Proceso proceso:todos) {
-	                if(proceso.getIp().equals(this.ip) && proceso.getEstado_proceso().equals("arrancado")) {
+	                if(proceso.getIp().equals(this.ip)) {
 	                    proceso.setCoordinador(id);
 	                } else {
 	                    ips.add(proceso.getIp());
@@ -221,7 +221,7 @@ public class Servicio {
 	            Collection<Proceso> todos = procesos.values();
 	            
 	            for(Proceso proceso:todos) {
-	                if(proceso.getIp().equals(this.ip) && proceso.getEstado_proceso().equals("arrancado")) {
+	                if(proceso.getIp().equals(this.ip)) {
 	                    proceso.setCoordinador(id);
 	                }
 	            }
