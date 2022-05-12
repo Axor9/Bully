@@ -112,37 +112,6 @@
 	    	<classes dir="${dir.workspace}/build/classes"/>
 	    	<fileset dir="${dir.workspace}/build/classes"/>
 	    	<lib dir="${lib.dir}"/>
-		<fileset dir="${dir.workspace}/build/classes"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="aopalliance-repackaged-2.6.1.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="hk2-api-2.6.1.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="hk2-locator-2.6.1.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="hk2-utils-2.6.1.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.activation-api-1.2.2.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.annotation-api-1.3.5.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.inject-2.6.1.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.json-1.1.6-module.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.json-1.1.6.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.json-api-1.1.6.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.json.bind-api-1.0.2.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.persistence-api-2.2.3.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.servlet-api-4.0.3.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.validation-api-2.0.2.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.ws.rs-api-2.1.6-sources.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.ws.rs-api-2.1.6.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jakarta.xml.bind-api-2.3.3.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="javassist-3.25.0-GA.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-client.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-common.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-container-servlet-core.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-container-servlet.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-hk2.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-media-jaxb.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-media-json-binding.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-media-sse.jar"/>
-		<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="jersey-server.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="org.osgi.core-6.0.0.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="osgi-resource-locator-1.0.3.jar"/>
-            	<zipfileset dir="${dir.workspace}/WebContent/WEB-INF/lib" includes="yasson-1.0.9.jar"/>
 	      <manifest>
 		<attribute name="AntCreateWar" value="ant.Create.War" />
 	      </manifest>
