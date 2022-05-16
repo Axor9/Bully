@@ -257,8 +257,11 @@ public class Servicio {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("estado")
     public String estado(@QueryParam(value="id") int id){
-        
-        return "Proceso " + id + ": estado "+procesos.get(id).getEstado_proceso()+ " coordinador : "+ procesos.get(id).getCoordinador();
+        if (procesos.get(id).getEstado_proceso().equalsIgnoreCase("parado")) {
+            return "Proceso " + id + ": estado parado";
+        }
+    	
+        return "Proceso " + id + ": estado arrancado coordinador : "+ procesos.get(id).getCoordinador();
         
     }
 
