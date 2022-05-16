@@ -118,6 +118,16 @@ public class Gestor {
                 	gestor.salir(ips);
                    	exit = true;
                    	break;
+                case "restart": 
+                	if(opciones[1].equals("all")) {
+                		for(String ipSet : ips) {
+                    		gestor.reinicio(ipSet);
+                    	}
+	                } else {
+	                	gestor.reinicio(opciones[1]);
+	                }
+                	
+                   	break;
             }
             if(exit) {
             	lectura.close();
@@ -127,6 +137,28 @@ public class Gestor {
         }
         
     }
+    
+    private void reinicio(String ipSet) {
+    	Client client=ClientBuilder.newClient();
+    	Collection<Proceso> procesosC = procesos.values();
+    	boolean flag = false;
+    	
+    	try {
+    		URI uri=UriBuilder.fromUri("http://"+ ipSet +":8080/Bully").build();
+            WebTarget target = client.target(uri);
+        	target.path("servicio").path("getIP").request(MediaType.TEXT_PLAIN).get(String.class);
+            
+    		System.out.println("Iniciando ip :" + ipSet);
+        	for(Proceso proceso : procesosC) {
+        		String response = target.path("servicio").path("inicio").queryParam("id", proceso.getId()).queryParam("ip", proceso.getIp()).request(MediaType.TEXT_PLAIN).get(String.class);
+            	System.out.println(response);
+        	}
+    	} catch(Exception e) {
+    		System.out.println("El servidor esta caido");
+    	}
+    		
+	}
+    
     public void router(String id,String route) {
     	Proceso proceso = procesos.get(Integer.parseInt(id));
     	
@@ -167,6 +199,8 @@ public class Gestor {
     }
     
 }
+
+
 
 
 
