@@ -53,19 +53,32 @@ public class Gestor {
         	
         	URI uri=UriBuilder.fromUri("http://"+ ipSet +":8080/Bully").build();
             WebTarget target = client.target(uri);
+		try{
         	target.path("servicio").path("getIP").request(MediaType.TEXT_PLAIN).get(String.class);
         	
-    		System.out.println("Iniciand ip :" + ipSet);
-        	for(Proceso proceso : procesosC) {
-        		response = target.path("servicio").path("inicio").queryParam("id", proceso.getId()).queryParam("ip", proceso.getIp()).request(MediaType.TEXT_PLAIN).get(String.class);
-            	System.out.println(response);
-        	}
+    		System.out.println("Iniciando ip :" + ipSet);
+			for(Proceso proceso : procesosC) {
+        			response = target.path("servicio").path("inicio").queryParam("id", proceso.getId()).queryParam("ip", proceso.getIp()).request(MediaType.TEXT_PLAIN).get(String.class);
+            		System.out.println(response);
+        		}
+		} catch(Exception e) {
+    			System.out.println("El servidor "+ipSet+" no esta disponible");
+    		}
         }
         
         Gestor gestor = new Gestor();
+
+	System.out.print("\n ----------------------- \n"+
+			     "    Menu de opciones:\n"+
+			     " ----------------------- \n"+
+			     "> run-{id}   / run-{id1,id2...}   / run-all\n"+
+			     "> stop-{id}  / stop-{id1,id2...}  / stop-all\n"+
+			     "> state-{id} / state-{id1,id2...} / state-all\n"+
+			     "> exit\n"+
+			     "> restart-{ip} / restart-all\n\n");
         
-        while(true) {	
-            System.out.print("Escriba la siguiente accion: ");
+        while(true) {
+            System.out.print("\nEscriba la siguiente accion: ");
             option = lectura.nextLine();
             option = option.toLowerCase();
             
@@ -192,14 +205,13 @@ public class Gestor {
 	                    procesos.remove(proceso.getId());
 	                }
 	            }
-	    		System.out.println("Servidor no response");
+	    		System.out.println("Servidor no responde");
 		    }
 
     	}
     }
     
 }
-
 
 
 
