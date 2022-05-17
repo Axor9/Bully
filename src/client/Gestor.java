@@ -95,7 +95,13 @@ public class Gestor {
 	                } else {
 	                    String[] ids = opciones[1].split(",");
 	                    for(int i=0;i<ids.length;i++) {
-	                        gestor.router(ids[i],"arrancar");
+	                    	try {
+	                    		if(procesos.containsKey(Integer.parseInt(ids[i]))) {
+		                    		gestor.router(ids[i],"arrancar");
+		                    	}
+	                    	} catch(Exception e) {
+	                    		System.out.println("Error de sintaxis");
+	                    	}
 	                    }
 	                }
 	                
@@ -109,7 +115,13 @@ public class Gestor {
 	                } else {
 	                    String[] ids = opciones[1].split(",");
 	                    for(int i=0;i<ids.length;i++) {
-	                        gestor.router(ids[i],"parar");
+	                    	try {
+	                    		if(procesos.containsKey(Integer.parseInt(ids[i]))) {
+	                    			gestor.router(ids[i],"parar");
+		                    	}
+	                    	} catch(Exception e) {
+	                    		System.out.println("Error de sintaxis");
+	                    	}
 	                    }
 	                }
 	                
@@ -123,7 +135,13 @@ public class Gestor {
 	                } else {
 	                    String[] ids = opciones[1].split(",");
 	                    for(int i=0;i<ids.length;i++) {
-	                        gestor.router(ids[i],"estado");
+	                    	try {
+	                    		if(procesos.containsKey(Integer.parseInt(ids[i]))) {
+	                    			gestor.router(ids[i],"estado");
+		                    	}
+	                    	} catch(Exception e) {
+	                    		System.out.println("Error de sintaxis");
+	                    	}
 	                    }
 	                }
 	                break;
@@ -137,7 +155,13 @@ public class Gestor {
                     		gestor.reinicio(ipSet);
                     	}
 	                } else {
-	                	gestor.reinicio(opciones[1]);
+	                	try {
+                    		if(ips.contains(opciones[1])) {
+                    			gestor.reinicio(opciones[1]);
+	                    	}
+                    	} catch(Exception e) {
+                    		System.out.println("Error de sintaxis");
+                    	}
 	                }
                 	
                    	break;
